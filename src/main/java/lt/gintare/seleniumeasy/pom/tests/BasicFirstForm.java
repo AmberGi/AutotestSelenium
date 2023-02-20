@@ -1,4 +1,4 @@
-package lt.gintare;
+package lt.gintare.seleniumeasy.pom.tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -14,12 +14,11 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class SeleniumDemo {
+public class BasicFirstForm {
 
     WebDriver driver;
 
     @BeforeTest
-
     public void setUpDriver(){
 
         WebDriverManager.chromedriver().setup();
@@ -32,8 +31,6 @@ public class SeleniumDemo {
 
         driver.get("https://demo.seleniumeasy.com/basic-first-form-demo.html");
     }
-
-
 
     @Test
     public void testSingleInputField_InputMessageGintareInSeleniumEasy() {
