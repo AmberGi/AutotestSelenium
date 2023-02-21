@@ -1,7 +1,5 @@
 package lt.gintare.seleniumeasy.pom.pages;
 
-import org.openqa.selenium.By;
-
 public class BasicCheckBoxPage {
 
     public static void open() {
@@ -13,10 +11,14 @@ public class BasicCheckBoxPage {
     }
 
     public static void clickSingleCheckBox() {
-        Common.clickElement(By.xpath("//*[@id='isAgeSelected']"));
+        Common.clickElement(
+                Locator.BasicCheckBox.checkBoxSingle
+        );
     }
 
     public static String readMessage() {
-        return Common.getElementText(By.xpath("//*[@id='txtAge']"));
+        return Common.getElementText(
+                Locator.BasicCheckBox.divDisplayMessageAge
+        );
     }
 }
