@@ -2,13 +2,11 @@ package lt.gintare.seleniumeasy.pom.tests;
 
 import lt.gintare.seleniumeasy.pom.pages.BasicSelectDropDownPage;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class BasicSelectDropDownTest {
 
-    @BeforeTest
+    @BeforeMethod
     public void setUpDriver() {
         BasicSelectDropDownPage.open();
     }
@@ -27,7 +25,7 @@ public class BasicSelectDropDownTest {
         );
     }
 
-    @AfterTest
+    @AfterMethod
     public void closeDriver() {
         BasicSelectDropDownPage.close();
     }

@@ -2,13 +2,11 @@ package lt.gintare.seleniumeasy.pom.tests;
 
 import lt.gintare.seleniumeasy.pom.pages.BasicFirstFormPage;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class BasicFirstFormTest {
 
-    @BeforeTest
+    @BeforeMethod
     public void setUpDriver() {
         BasicFirstFormPage.open();
     }
@@ -43,7 +41,7 @@ public class BasicFirstFormTest {
         Assert.assertEquals(actualResult, expectedResult);
     }
 
-    @AfterTest
+    @AfterMethod
     public void closeDriver() {
         BasicFirstFormPage.close();
     }

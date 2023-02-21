@@ -2,13 +2,11 @@ package lt.gintare.seleniumeasy.pom.tests;
 
 import lt.gintare.seleniumeasy.pom.pages.BasicCheckBoxPage;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class BasicCheckBoxTest {
 
-    @BeforeTest
+    @BeforeMethod
     public void setUpDriver() {
         BasicCheckBoxPage.open();
     }
@@ -27,7 +25,7 @@ public class BasicCheckBoxTest {
         );
     }
 
-    @AfterTest
+    @AfterMethod
     public void closeDriver() {
         BasicCheckBoxPage.close();
     }
