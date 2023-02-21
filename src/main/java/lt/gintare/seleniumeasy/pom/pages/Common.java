@@ -3,6 +3,7 @@ package lt.gintare.seleniumeasy.pom.pages;
 import lt.gintare.seleniumeasy.pom.utils.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class Common {
 
@@ -29,5 +30,11 @@ public class Common {
 
     public static String getElementText(By locator) {
         return getElement(locator).getText();
+    }
+
+    public static void selectOptionByValue(By locator, String day) {
+        WebElement element = getElement(locator);
+        Select select = new Select(element);
+        select.selectByValue(day);
     }
 }

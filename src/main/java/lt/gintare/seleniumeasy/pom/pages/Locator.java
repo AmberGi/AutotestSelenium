@@ -19,4 +19,9 @@ public class Locator {
         public static By checkBoxSingle = By.xpath("//*[@id='isAgeSelected']");
         public static By divDisplayMessageAge = By.xpath("//*[@id='txtAge']");
     }
+
+    public class BasicSelectDropDown {
+        public static By selectDayOfTheWeek = By.xpath("//select[@id='select-demo']");
+        public static By paragraphDaySelected = By.xpath("//p[contains(text(),'Day')]");
+    }
 }
