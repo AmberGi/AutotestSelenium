@@ -2,12 +2,14 @@ package lt.gintare.seleniumeasy.pom.tests;
 
 import lt.gintare.seleniumeasy.pom.pages.BasicCheckBoxPage;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-public class BasicCheckBoxTest {
+public class BasicCheckBoxTest extends BaseTest {
 
     @BeforeMethod
-    public void setUpDriver() {
+    @Override
+    public void setUp() {
         BasicCheckBoxPage.open();
     }
 
@@ -23,10 +25,5 @@ public class BasicCheckBoxTest {
                 actualResult.contains(expectedResult),
                 String.format("Actual: %s; Expected: %s", actualResult, expectedResult)
         );
-    }
-
-    @AfterMethod
-    public void closeDriver() {
-        BasicCheckBoxPage.close();
     }
 }

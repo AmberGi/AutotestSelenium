@@ -6,11 +6,6 @@ public class BasicSelectDropDownPage {
         );
     }
 
-    public static void close() {
-        Common.closeDriver(
-        );
-    }
-
     public static void selectDayFromDropDownList(String day) {
         Common.selectOptionByValue(
                 Locator.BasicSelectDropDown.selectDayOfTheWeek,

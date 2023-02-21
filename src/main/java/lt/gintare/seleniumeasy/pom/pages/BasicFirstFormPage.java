@@ -6,10 +6,6 @@ public class BasicFirstFormPage {
         Common.openUrl("https://demo.seleniumeasy.com/basic-first-form-demo.html");
     }
 
-    public static void close() {
-        Common.closeDriver();
-    }
-
     public static void enterMessage(String message) {
         Common.sendKeysToElement(
                 Locator.BasicFirstForm.inputUserMessage,

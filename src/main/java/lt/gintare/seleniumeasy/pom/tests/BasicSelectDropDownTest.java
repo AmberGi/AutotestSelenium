@@ -2,13 +2,16 @@ package lt.gintare.seleniumeasy.pom.tests;
 
 import lt.gintare.seleniumeasy.pom.pages.BasicSelectDropDownPage;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-public class BasicSelectDropDownTest {
+public class BasicSelectDropDownTest extends BaseTest {
 
     @BeforeMethod
-    public void setUpDriver() {
-        BasicSelectDropDownPage.open();
+    @Override
+    public void setUp() {
+        BasicSelectDropDownPage.open(
+        );
     }
 
     @Test
@@ -23,10 +26,5 @@ public class BasicSelectDropDownTest {
                 actualResult.contains(expectedResult),
                 String.format("Actual: %s; Expected: %s", actualResult, expectedResult)
         );
-    }
-
-    @AfterMethod
-    public void closeDriver() {
-        BasicSelectDropDownPage.close();
     }
 }
