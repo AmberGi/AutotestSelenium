@@ -15,13 +15,25 @@ public class Locator {
         public static By spanDisplayTotal = By.xpath("//*[@id='displayvalue']");
     }
 
-    public class BasicCheckBox {
+    public static class BasicCheckBox {
         public static By checkBoxSingle = By.xpath("//*[@id='isAgeSelected']");
         public static By divDisplayMessageAge = By.xpath("//*[@id='txtAge']");
     }
 
-    public class BasicSelectDropDown {
+    public static class BasicSelectDropDown {
         public static By selectDayOfTheWeek = By.xpath("//select[@id='select-demo']");
         public static By paragraphDaySelected = By.xpath("//p[contains(text(),'Day')]");
+    }
+
+    public static class BasicRadioButton {
+
+        public static By buttonGetCheckedValue = By.xpath("//*[@id='buttoncheck']");
+        public static By paragraphRadioButton = By.xpath("//p[@class='radiobutton']");
+
+        public static By inputByGender(String gender) {
+            return By.xpath(
+                    String.format("//input[@value='%s' and @name='optradio']", gender)
+            );
+        }
     }
 }
