@@ -1,5 +1,7 @@
 package lt.gintare.seleniumeasy.pom.pages;
 
+import org.openqa.selenium.By;
+
 public class BasicCheckBoxPage {
 
     public static void open() {
