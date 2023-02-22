@@ -15,6 +15,23 @@ public class BasicRadioButtonPage {
     }
 
     public static String getSingleResponseMessage() {
-            return Common.getElementText(Locator.BasicRadioButton.paragraphRadioButton);
+        return Common.getElementText(Locator.BasicRadioButton.paragraphRadioButton);
+    }
+
+    public static void clickGroupRadioButtonGenderGroup(String genderGroup) {
+        Common.clickElement(Locator.BasicRadioButton.inputByGenderGroup(genderGroup));
+    }
+
+    public static void clickGroupRadioButtonAgeGroup(String ageGroup) {
+        Common.clickElement(Locator.BasicRadioButton.inputByAgeGroup(ageGroup));
+    }
+
+    public static void clickGroupRadioButtonGetValues() {
+        Common.clickElement(Locator.BasicRadioButton.getButtonGetValues);
+    }
+
+    public static String getValuesResposeMessage() {
+        return Common.getElementText(Locator.BasicRadioButton.responseGetValues);
     }
 }
+

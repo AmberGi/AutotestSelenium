@@ -26,13 +26,32 @@ public class Locator {
     }
 
     public static class BasicRadioButton {
-
         public static By buttonGetCheckedValue = By.xpath("//*[@id='buttoncheck']");
         public static By paragraphRadioButton = By.xpath("//p[@class='radiobutton']");
+        public static By getButtonGetValues = By.xpath("(//button[@class='btn btn-default'])[2]");
+        public static By responseGetValues = By.xpath("//p[@class='groupradiobutton']");
 
         public static By inputByGender(String gender) {
             return By.xpath(
                     String.format("//input[@value='%s' and @name='optradio']", gender)
+            );
+        }
+
+        public static By inputByAge(String age) {
+            return By.xpath(
+                    String.format("//input[@value='%s']", age)
+            );
+        }
+
+        public static By inputByGenderGroup(String genderGroup) {
+            return By.xpath(
+                    String.format("//input[@value='%s' and @name='gender']", genderGroup)
+            );
+        }
+
+        public static By inputByAgeGroup(String ageGroup) {
+            return By.xpath(
+                    String.format("//input[@value='%s' and @name='ageGroup']", ageGroup)
             );
         }
     }
