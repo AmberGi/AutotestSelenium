@@ -51,19 +51,19 @@ public class BasicRadioButtonTest extends BaseTest {
     }
 
     @Test(dataProvider = "dataProviderForTestGroupRadioButton")
-    public void testGroupRadioButton(String expectedResultGenderGroup,
+    public void testGroupRadioButton(String clickGenderGroup,
                                      String expectedResultAgeGroup) {
         String actualResult;
 
-        BasicRadioButtonPage.clickGroupRadioButtonGenderGroup(expectedResultGenderGroup);
+        BasicRadioButtonPage.clickGroupRadioButtonGenderGroup(clickGenderGroup);
         BasicRadioButtonPage.clickGroupRadioButtonAgeGroup(expectedResultAgeGroup);
         BasicRadioButtonPage.clickGroupRadioButtonGetValues();
 
         actualResult = BasicRadioButtonPage.getValuesResposeMessage();
 
         Assert.assertTrue(
-                actualResult.contains(expectedResultGenderGroup),
-                String.format("Actual: %s; Expected: %s", actualResult, expectedResultGenderGroup)
+                actualResult.contains(clickGenderGroup),
+                String.format("Actual: %s; Expected: %s", actualResult, clickGenderGroup)
         );
 
         Assert.assertTrue(
