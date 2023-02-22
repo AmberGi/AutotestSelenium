@@ -3,6 +3,7 @@ package lt.gintare.seleniumeasy.pom.tests;
 import lt.gintare.seleniumeasy.pom.pages.BasicRadioButtonPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import javax.swing.*;
@@ -15,12 +16,19 @@ public class BasicRadioButtonTest extends BaseTest {
         BasicRadioButtonPage.open();
     }
 
-    @Test
-    public void testRadioButtonMale() {
-        String expectedResult = "Male";
+    @DataProvider(name = "dataProviderForTestRadioButton")
+    public Object[][] dataProviderForRadioButton() {
+        return new Object[][]{
+                {"Male", "Male"},
+                {"Female", "Female"}
+        };
+    }
+
+    @Test(dataProvider = "dataProviderForTestRadioButton")
+    public void testRadioButton(String clickGender, String expectedResult) {
         String actualResult;
 
-        BasicRadioButtonPage.clickRadioButtonGender(expectedResult);
+        BasicRadioButtonPage.clickRadioButtonGender(clickGender);
         BasicRadioButtonPage.clickButtonGetCheckedValue();
         actualResult = BasicRadioButtonPage.getSingleResponseMessage();
 
@@ -30,10 +38,21 @@ public class BasicRadioButtonTest extends BaseTest {
         );
     }
 
-    @Test
-    public void testGroupRadioButtonFemale5to15() {
-        String expectedResultGenderGroup = "Female";
-        String expectedResultAgeGroup = "5 - 15";
+    @DataProvider(name = "dataProviderForTestGroupRadioButton")
+    public Object[][] dataProviderForGroupRadioButton() {
+        return new Object[][]{
+                {"Male", "0 - 5"},
+                {"Male", "5 - 15"},
+                {"Male", "5 - 15"},
+                {"Female", "0 - 5"},
+                {"Female", "5 - 15"},
+                {"Female", "15 - 50"}
+        };
+    }
+
+    @Test(dataProvider = "dataProviderForTestGroupRadioButton")
+    public void testGroupRadioButton(String expectedResultGenderGroup,
+                                     String expectedResultAgeGroup) {
         String actualResult;
 
         BasicRadioButtonPage.clickGroupRadioButtonGenderGroup(expectedResultGenderGroup);
