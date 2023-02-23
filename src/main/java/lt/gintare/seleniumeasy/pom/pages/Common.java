@@ -9,7 +9,7 @@ public class Common {
 
     public static void openUrl(String url) {
         Driver.setDriver();
-        Driver.getDriver().get(url);
+        Driver.getDriverThread().get(url);
     }
 
     public static void closeDriver() {
@@ -17,7 +17,7 @@ public class Common {
     }
 
     private static WebElement getElement(By locator) {
-        return Driver.getDriver().findElement(locator);
+        return Driver.getDriverThread().findElement(locator);
     }
 
     public static void sendKeysToElement(By locator, String text) {

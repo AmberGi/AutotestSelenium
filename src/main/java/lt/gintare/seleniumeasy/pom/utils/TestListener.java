@@ -8,7 +8,6 @@ import org.testng.ITestResult;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.DateTimeException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
@@ -23,7 +22,7 @@ public class TestListener implements ITestListener {
     private void takeScreenShot() {
 
         try {
-            TakesScreenshot screenshot = (TakesScreenshot) Driver.getDriver();
+            TakesScreenshot screenshot = (TakesScreenshot) Driver.getDriverThread();
             File screenshotFile = screenshot.getScreenshotAs(OutputType.FILE);
 
             String directory = "./screenshots/";
