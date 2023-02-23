@@ -36,20 +36,22 @@ public class BasicRadioButtonTest extends BaseTest {
         );
     }
 
-    @DataProvider(name = "dataProviderForTestGroupRadioButton")
+    @DataProvider(name = "dataProviderForTestGroupRadioButton", parallel = true)
     public Object[][] dataProviderForGroupRadioButton() {
         return new Object[][]{
-                {"Male", "0 - 5"},
-                {"Male", "5 - 15"},
-                {"Male", "5 - 15"},
-                {"Female", "0 - 5"},
-                {"Female", "5 - 15"},
-                {"Female", "15 - 50"}
+                {"Male", "Male", "0 - 5", "0 - 5"},
+                {"Male", "Male", "5 - 15", "5 - 15"},
+                {"Male", "Male", "15 - 50", "15 - 50"},
+                {"Female", "Female", "0 - 5", "0 - 5"},
+                {"Female", "Female", "5 - 15", "5 - 15"},
+                {"Female", "Female", "15 - 50", "15 - 50"},
         };
     }
 
-    @Test(dataProvider = "dataProviderForTestGroupRadioButton")
+    @Test(dataProvider = "dataProviderForTestGroupRadioButton", threadPoolSize = 3)
     public void testGroupRadioButton(String clickGenderGroup,
+                                     String expectedResultGenderGroup,
+                                     String clickAgeGroup,
                                      String expectedResultAgeGroup) {
         String actualResult;
 
@@ -61,11 +63,11 @@ public class BasicRadioButtonTest extends BaseTest {
 
         Assert.assertTrue(
                 actualResult.contains(clickGenderGroup),
-                String.format("Actual: %s; Expected: %s", actualResult, clickGenderGroup)
+                String.format("Actual: %s; Expected: %s", actualResult, expectedResultGenderGroup)
         );
 
         Assert.assertTrue(
-                actualResult.contains(expectedResultAgeGroup),
+                actualResult.contains(clickAgeGroup),
                 String.format("Actual: %s; Expected: %s", actualResult, expectedResultAgeGroup)
         );
     }
