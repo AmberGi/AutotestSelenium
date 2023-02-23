@@ -22,7 +22,7 @@ public class TestListener implements ITestListener {
     private void takeScreenShot() {
 
         try {
-            TakesScreenshot screenshot = (TakesScreenshot) Driver.getDriverThread();
+            TakesScreenshot screenshot = (TakesScreenshot) Driver.getDriver();
             File screenshotFile = screenshot.getScreenshotAs(OutputType.FILE);
 
             String directory = "./screenshots/";

@@ -26,4 +26,17 @@ public class BasicCheckBoxTest extends BaseTest {
                 String.format("Actual: %s; Expected: %s", actualResult, expectedResult)
         );
     }
+
+    @Test
+    public void testMultipleCheckBoxDemo() {
+        boolean isCheckBoxChecked = true;
+        boolean expectedAllElementsChecked = true;
+        boolean actualAllElementsChecked;
+
+        BasicCheckBoxPage.clickButtonCheckAll();
+        actualAllElementsChecked = BasicCheckBoxPage.checkSelectedStatusOfAllCheckBoxes(isCheckBoxChecked);
+
+        Assert.assertTrue(actualAllElementsChecked == expectedAllElementsChecked
+        );
+    }
 }

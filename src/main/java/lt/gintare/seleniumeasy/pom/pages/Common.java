@@ -5,11 +5,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Common {
 
     public static void openUrl(String url) {
         Driver.setDriver();
-        Driver.getDriverThread().get(url);
+        Driver.getDriver().get(url);
     }
 
     public static void closeDriver() {
@@ -17,7 +20,11 @@ public class Common {
     }
 
     private static WebElement getElement(By locator) {
-        return Driver.getDriverThread().findElement(locator);
+        return Driver.getDriver().findElement(locator);
+    }
+
+    private static List<WebElement> getElements(By locator) {
+        return Driver.getDriver().findElements(locator);
     }
 
     public static void sendKeysToElement(By locator, String text) {
@@ -36,5 +43,15 @@ public class Common {
         WebElement element = getElement(locator);
         Select select = new Select(element);
         select.selectByValue(day);
+    }
+
+    public static List<Boolean> getSelectedStatusOfAllCheckedBoxes(By locator) {
+        List<WebElement> elements = getElements(locator);
+        List<Boolean> elementsStatuses = new ArrayList<>();
+
+        for (WebElement element : elements) {
+            elementsStatuses.add(element.isSelected());
+        }
+        return elementsStatuses;
     }
 }
