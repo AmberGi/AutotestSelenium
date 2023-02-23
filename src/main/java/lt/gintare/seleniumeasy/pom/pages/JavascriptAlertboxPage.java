@@ -20,4 +20,19 @@ public class JavascriptAlertboxPage {
     public static boolean isAlertBoxIsPresent() {
         return Common.isAlertPresent();
     }
+
+    public static void clickOnConfirmBox(String clickButton) {
+        switch (clickButton){
+            case "OK" -> Common.acceptAlert();
+            case "Cancel" -> Common.dismissAlert();
+        }
+    }
+
+    public static void clickButtonMyConfirm() {
+            Common.clickElement(Locator.JavascriptAlertBox.buttonMyConfirm);
+    }
+
+    public static String readMessageMyConfirm() {
+            return Common.getElementText(Locator.JavascriptAlertBox.paragraphMyConfirm);
+    }
 }

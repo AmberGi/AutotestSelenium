@@ -60,5 +60,7 @@ public class Locator {
 
     public class JavascriptAlertBox {
         public static By buttonMyAlert = By.xpath("//button[@onclick='myAlertFunction()']");
+        public static By buttonMyConfirm = By.xpath("//button[@onclick='myConfirmFunction()']");
+        public static By paragraphMyConfirm = By.xpath("//p[@id='confirm-demo']");
     }
 }

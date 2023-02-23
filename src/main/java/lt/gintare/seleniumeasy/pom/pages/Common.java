@@ -64,6 +64,10 @@ public class Common {
         Driver.getDriver().switchTo().alert().accept();
     }
 
+    public static void dismissAlert() {
+        Driver.getDriver().switchTo().alert().dismiss();
+    }
+
     public static void sleep(int millis) {
         try {
             Thread.sleep(millis);
@@ -74,9 +78,9 @@ public class Common {
     }
 
     public static boolean isAlertPresent() {
-        try{
+        try {
             Driver.getDriver().switchTo().alert();
-        } catch (NoAlertPresentException e){
+        } catch (NoAlertPresentException e) {
             return false;
         }
         return true;
