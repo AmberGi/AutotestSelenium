@@ -1,6 +1,8 @@
-package lt.gintare.seleniumeasy.pom.tests;
+package lt.gintare.seleniumeasy.pom.tests.common;
 
 import lt.gintare.seleniumeasy.pom.pages.JavascriptAlertboxPage;
+import lt.gintare.seleniumeasy.pom.tests.BaseTest;
+import lt.gintare.seleniumeasy.pom.tests.common.Buttons;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -32,13 +34,13 @@ public class JavascriptAlertboxTest extends BaseTest {
     @DataProvider(name = "dataProviderForTestConfirmBox")
     public Object[][] dataProviderForConfirmBox() {
         return new Object[][]{
-                {"OK", "OK"},
-                {"Cancel", "Cancel"}
+                {Buttons.OK, "OK"},
+                {Buttons.CANCEL, "Cancel"}
         };
     }
 
     @Test(dataProvider = "dataProviderForTestConfirmBox")
-    public void testConfirmBox(String clickButton, String expectedResult) {
+    public void testConfirmBox(Buttons clickButton, String expectedResult) {
         String actualResult;
 
         JavascriptAlertboxPage.clickButtonMyConfirm();

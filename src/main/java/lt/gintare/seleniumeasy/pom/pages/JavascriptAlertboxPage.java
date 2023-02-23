@@ -1,5 +1,7 @@
 package lt.gintare.seleniumeasy.pom.pages;
 
+import lt.gintare.seleniumeasy.pom.tests.common.Buttons;
+
 public class JavascriptAlertboxPage {
     public static void open() {
         Common.openUrl("https://demo.seleniumeasy.com/javascript-alert-box-demo.html");
@@ -21,18 +23,18 @@ public class JavascriptAlertboxPage {
         return Common.isAlertPresent();
     }
 
-    public static void clickOnConfirmBox(String clickButton) {
-        switch (clickButton){
-            case "OK" -> Common.acceptAlert();
-            case "Cancel" -> Common.dismissAlert();
+    public static void clickOnConfirmBox(Buttons clickButton) {
+        switch (clickButton) {
+            case OK -> Common.acceptAlert();
+            case CANCEL -> Common.dismissAlert();
         }
     }
 
     public static void clickButtonMyConfirm() {
-            Common.clickElement(Locator.JavascriptAlertBox.buttonMyConfirm);
+        Common.clickElement(Locator.JavascriptAlertBox.buttonMyConfirm);
     }
 
     public static String readMessageMyConfirm() {
-            return Common.getElementText(Locator.JavascriptAlertBox.paragraphMyConfirm);
+        return Common.getElementText(Locator.JavascriptAlertBox.paragraphMyConfirm);
     }
 }
