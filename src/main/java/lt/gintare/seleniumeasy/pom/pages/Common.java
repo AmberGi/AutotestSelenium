@@ -2,6 +2,7 @@ package lt.gintare.seleniumeasy.pom.pages;
 
 import lt.gintare.seleniumeasy.pom.utils.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -57,5 +58,27 @@ public class Common {
 
     public static String getElementAttributeOutcome(By locator, String attributeName) {
         return getElement(locator).getAttribute(attributeName);
+    }
+
+    public static void acceptAlert() {
+        Driver.getDriver().switchTo().alert().accept();
+    }
+
+    public static void sleep(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    public static boolean isAlertPresent() {
+        try{
+            Driver.getDriver().switchTo().alert();
+        } catch (NoAlertPresentException e){
+            return false;
+        }
+        return true;
     }
 }
