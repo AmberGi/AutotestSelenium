@@ -6,8 +6,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import javax.swing.*;
-
 public class BasicRadioButtonTest extends BaseTest {
 
     @BeforeMethod
