@@ -39,4 +39,16 @@ public class BasicCheckBoxTest extends BaseTest {
         Assert.assertTrue(actualAllElementsChecked == expectedAllElementsChecked
         );
     }
+
+    @Test
+    public void testButtonAttributeOnClick(){
+        String attributeName = "value";
+        String expectedResult = "Uncheck All";
+        String actualResult;
+
+        BasicCheckBoxPage.clickButtonCheckAll();
+        actualResult = BasicCheckBoxPage.getButtonAttributeOutcome(attributeName);
+
+        Assert.assertEquals (actualResult, expectedResult);
+    }
 }

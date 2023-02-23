@@ -54,4 +54,8 @@ public class Common {
         }
         return elementsStatuses;
     }
+
+    public static String getElementAttributeOutcome(By locator, String attributeName) {
+        return getElement(locator).getAttribute(attributeName);
+    }
 }

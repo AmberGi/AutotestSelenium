@@ -29,10 +29,10 @@ public class Driver {
         driverThread.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10)
         );
     }
-
     public static WebDriver getDriver() {
         return driverThread.get();
     }
+
 
     public static void closeDriver() {
         driverThread.get().quit();

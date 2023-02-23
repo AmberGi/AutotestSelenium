@@ -14,15 +14,15 @@ public class BasicCheckBoxPage {
         );
     }
 
-    public static String readMessage() {
-        return Common.getElementText(
-                Locator.BasicCheckBox.divDisplayMessageAge
+    public static void clickButtonCheckAll() {
+        Common.clickElement(
+                Locator.BasicCheckBox.buttonCheckUncheckAll
         );
     }
 
-    public static void clickButtonCheckAll() {
-        Common.clickElement(
-                Locator.BasicCheckBox.buttonCheckAll
+    public static String readMessage() {
+        return Common.getElementText(
+                Locator.BasicCheckBox.divDisplayMessageAge
         );
     }
 
@@ -36,5 +36,9 @@ public class BasicCheckBoxPage {
             if (status != isCheckBoxStatus) return false;
         }
         return true;
+    }
+
+    public static String getButtonAttributeOutcome(String attributeName) {
+        return Common.getElementAttributeOutcome(Locator.BasicCheckBox.buttonCheckUncheckAll, attributeName);
     }
 }

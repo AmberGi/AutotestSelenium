@@ -18,7 +18,7 @@ public class Locator {
     public static class BasicCheckBox {
         public static By checkBoxSingle = By.xpath("//*[@id='isAgeSelected']");
         public static By divDisplayMessageAge = By.xpath("//*[@id='txtAge']");
-        public static By buttonCheckAll = By.xpath("//input[@id='check1']") ;
+        public static By buttonCheckUncheckAll = By.xpath("//input[@id='check1']") ;
         public static By inputMultipleCheckBox = By.xpath("//input[@class='cb1-element']");
     }
 
