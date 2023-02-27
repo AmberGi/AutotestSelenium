@@ -4,6 +4,7 @@ import lt.gintare.seleniumeasy.pom.utils.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
@@ -84,5 +85,13 @@ public class Common {
             return false;
         }
         return true;
+    }
+
+
+    public static void clickElementByAction(By locator) {
+        Actions actions = new Actions(Driver.getDriver());
+        WebElement element = getElement(locator);
+        actions.click(element);
+        actions.perform();
     }
 }

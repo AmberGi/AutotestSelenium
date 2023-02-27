@@ -1,6 +1,6 @@
 package lt.gintare.demoQA.tests;
 
-import lt.gintare.seleniumeasy.pom.pages.Common;
+import lt.gintare.demoQA.pages.Common;
 import lt.gintare.seleniumeasy.pom.utils.TestListener;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
