@@ -16,7 +16,7 @@ public class BasicSelectDropDownTest extends BaseTest {
 
     @Test
     public void testSelectListDemo() {
-        String expectedResult = "Saturday";
+        String expectedResult = "Sunday";
         String actualResult;
 
         BasicSelectDropDownPage.selectDayFromDropDownList(expectedResult);
