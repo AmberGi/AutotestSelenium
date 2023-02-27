@@ -1,6 +1,6 @@
 package lt.gintare.demoQA.pages;
 
-import lt.gintare.seleniumeasy.pom.utils.Driver;
+import lt.gintare.demoQA.utils.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
@@ -92,6 +92,19 @@ public class Common {
         Actions actions = new Actions(Driver.getDriver());
         WebElement element = getElement(locator);
         actions.click(element);
+        actions.perform();
+    }
+
+    public static void doubleClickElementByAction(By locator) {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.doubleClick(getElement(locator));
+        actions.perform();
+    }
+
+    public static void rightClickElementByAction(By locator) {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(getElement(locator));
+        actions.contextClick();
         actions.perform();
     }
 }

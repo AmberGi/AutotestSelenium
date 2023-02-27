@@ -14,4 +14,11 @@ public class Locator {
         public static By menuButtons = By.xpath
                 ("//div[@class='element-list collapse show']//li[@id='item-4']");
     }
+
+    public static class Buttons {
+        public static By buttonDoubleClick = By.xpath("//button[@id='doubleClickBtn']");
+        public static By paragraphDoubleClick = By.xpath("//*[@id='doubleClickMessage']");
+        public static By buttonRightClick = By.xpath("//*[@id='rightClickBtn']");
+        public static By paragraphRightClick = By.xpath("//*[@id='rightClickMessage']");
+    }
 }
